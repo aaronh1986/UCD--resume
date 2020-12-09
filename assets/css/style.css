@@ -63,6 +63,7 @@ h1, h2, h3, h4 {
     float: none;
 }
 
+.history-heading,
 .section-heading {
     font-family: "Exo", sans-serif;
     font-weight: 300;
@@ -295,3 +296,52 @@ transition: all 0.35s ease-in-out;
 }
 
 
+/*------------------------------------Work History*/
+
+.history-heading{
+    color: #fafafa;
+    margin-bottom: 50px;
+}
+
+.timeline-item{
+    padding: 4em 2em 0em 2em;
+    position: relative;
+    color: #fafafa;
+    border-left: 1px solid;
+}
+
+.timeline-item p {
+   padding: 0;
+   margin: 0;
+}
+
+.timeline-item:before {
+    content: attr(data-dates);
+    position: absolute;
+    left: 2.5em;
+    top: 3em;
+    display: block;
+    font-family: "Exo", sans-serif;
+    font-weight: 500;
+    font-size: 0.8em;
+    padding: 0;
+    margin: 0;
+}
+/*Can only use content with before or After pseudo elements *//* This pseudo element targets the data-dates attribute*/
+/* attr is short for attribute and will be used here to grab the data-dates attribute*/
+
+.timeline-item:after {/*:after provides the circular node... Here anyway, study this*/
+    width: 12px;
+    height: 12px;
+    display: block;
+    top: 2.4em;
+    position: absolute;
+    left: -6px;
+    border-radius: 12px; /*can make circle either with 50% or by matching height and width of the square*/
+    content: '';/*Empty string... don't want anything else to appear*/
+    background: #fafafa;
+}
+
+.history-items{
+    margin-bottom: 30px;
+}
